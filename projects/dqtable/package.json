@@ -1,0 +1,10 @@
+{
+  "name": "dqtable",
+  "version": "0.0.1",
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "ng-zorro-antd": "^8.5.2"
+  }
+}

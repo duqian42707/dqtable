@@ -1,27 +1,53 @@
-# NgxTable
+# angular第三方组件开发示例
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
+## 操作步骤
 
-## Development server
+1. 创建一个不带默认项目的工作空间
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+ng new dqtable --create-application=false
+```
+   
+2. 创建一个库
 
-## Code scaffolding
+```bash
+cd dqtable
+ng g library dqtable
+```
+这样会在项目根目录下创建`projects`目录，`dqtable`存放在`projects`目录下
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. 创建一个演示的应用
 
-## Build
+```bash
+ng g application demo
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`demo`项目会在`projects`目录下创建。
 
-## Running unit tests
+4. 安装依赖
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm i ng-zorro-antd@8
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+5. 声明自定义库的依赖
 
-## Further help
+修改库项目的`package.json`中的`peerDependencies`，表示你这个库依赖了哪些其他的库。
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+6. 进行库的开发，同时在演示项目中看效果。
+
+7. 打包
+
+```bash
+ng build dqtable
+```
+
+打包后的文件会生成到 `dist/dqtable` 下
+
+8. 发布
+
+```bash
+cd dist/dqtable
+npm publish
+```
